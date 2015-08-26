@@ -1,0 +1,2 @@
+class ByesController < ApplicationController
+end

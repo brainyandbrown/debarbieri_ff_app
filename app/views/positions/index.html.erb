@@ -1,0 +1,3 @@
+<% @positions.each do |position| %>
+		<li><a href="<%= position_path(position) %>"><%= position.position.upcase %></a></li>
+<% end %>

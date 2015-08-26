@@ -1,0 +1,8 @@
+<div class='home'>
+	 <header class="header">
+	 	<h1 class='title'>Mike D.'s Fantasy Football Picks</h1></header></br>
+
+	<% @positions.each do |position| %>
+		<li><a href="<%= position_path(position) %>"><%= position.position.upcase %></a></li>
+<% end %>
+</div>
