@@ -1,3 +1,8 @@
-<% @positions.each do |position| %>
-		<li><a href="<%= position_path(position) %>"><%= position.position.upcase %></a></li>
-<% end %>
+<%= @players %>
+
+<%# @player_list.each do |player| %>
+		<!-- <li><a href="<%#= position_path(position) %>"><%#= position.position.upcase %></a></li> -->
+			<li>
+				<%#= player.first[1] %>
+			</li>
+<%# end %>

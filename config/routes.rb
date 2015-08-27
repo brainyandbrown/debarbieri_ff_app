@@ -55,6 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'welcome#index'
 
+  post '/' => 'welcome#create'
   get '/positions' => 'positions#index'
   get '/positions/:id' => 'positions#show'
   # get '/positions/:id/quarterbacks' => 'positions#show'
@@ -63,11 +64,15 @@ Rails.application.routes.draw do
   # get '/positions/:id/tight_ends' => 'positions#show'
   # get '/positions/:id/kickers' => 'positions#show'
   # get '/positions/:id/defenses' => 'positions#show'
-  get '/ffn/team_listing' => 'ffn#listing'
+  get '/team_listing'  => 'ffn#cities'
+  get '/names/listing' => 'ffn#listing'
+  get '/info'          => 'ffn#info'
+
   resources :positions
   resources :names
   resources :byes
   resources :rankings
   resources :teams
   resources :weather
+  resources :ffn
 end

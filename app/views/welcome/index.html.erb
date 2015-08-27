@@ -1,8 +1,13 @@
 <div class='home'>
-	 <header class="header">
-	 	<h1 class='title'>Mike D.'s Fantasy Football Picks</h1></header></br>
+	<header class="header">
+		<h1 class='title'>Mike D.'s Fantasy Football Picks</h1></header></br>
 
-	<% @positions.each do |position| %>
-		<li><a href="<%= position_path(position) %>"><%= position.position.upcase %></a></li>
-<% end %>
+	<h3 class='subtitle'></h3>
+		<%= form_tag "/info", :method => :get do %>
+			<p><%= text_field_tag(:position, nil, { placeholder: "QB, RB, WR, TE, K, DEF" }) %></p>
+				<%= submit_tag 'Search' %>
+		<% end %>
+
+		<a href="/team_listing">NFL Cities</a>
+
 </div>
