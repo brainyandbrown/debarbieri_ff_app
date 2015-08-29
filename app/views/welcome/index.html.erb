@@ -3,7 +3,7 @@
 		<h1 class='title'>Mike D.'s Fantasy Football Picks</h1></header></br>
 
 	<h3 class='subtitle'></h3>
-		<%= form_tag "/info", :method => :get do %>
+		<%= form_tag "/names/listing", :method => :get do %>
 			<p><%= text_field_tag(:position, nil, { placeholder: "QB, RB, WR, TE, K, DEF" }) %></p>
 				<%= submit_tag 'Search' %>
 		<% end %>
