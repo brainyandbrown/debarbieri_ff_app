@@ -1,9 +1,12 @@
+require 'httparty'
+
 module FfnApi
 	# include FFNerd
 	def self.teams_by_name(team_nickname)
 		# team_name = URI.encode(team_nickname)
 		url = "http://www.fantasyfootballnerd.com/service/nfl-teams/json/he96q9pfk242"
 		response = HTTParty.get(url)
+		JSON.parse(response.body)
 		teams_array = response['NFLTeams'].each_with_index { |i| print i['shortName'] + ' ' }
 		teams_array
 	end
@@ -12,6 +15,7 @@ module FfnApi
 		position = URI.encode(full_name)
 		url = "http://www.fantasyfootballnerd.com/service/players/json/he96q9pfk242/#{position}"
 		response = HTTParty.get(url)
+		JSON.parse(response.body)
 		players_array = response['Players'].each_with_index { |i| print i['displayName'] + ' ' }
 		players_array
 	end
